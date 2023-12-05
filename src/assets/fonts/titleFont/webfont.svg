@@ -1,0 +1,60 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+
+<svg>
+<metadata>
+Created by webfont
+</metadata>
+<defs>
+
+<font id="Noto Sans S Chinese Black" horiz-adv-x="1000" vert-adv-y="1000" >
+  <font-face
+    
+    font-family="Noto Sans S Chinese Black"
+    
+    font-weight="900"
+    
+    font-stretch="normal"
+    
+    units-per-em="1000"
+    
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    
+    ascent="880"
+    
+    descent="-120"
+    
+    x-height="569"
+    
+    cap-height="744"
+    
+    bbox="-1019 -1045 2925 1805"
+    
+    underline-thickness="50"
+    
+    underline-position="-100"
+    
+    unicode-range="U+0001-2CE93"
+    
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="cid41" unicode="&#x48;" d="M86 744h179v-283h245v283h177v-744h-177v306h-245v-306h-179v744z"  horiz-adv-x="774"   />
+
+    
+    <glyph glyph-name="cid66" unicode="&#x61;" d="M277 124q27 0 46.5 12t39.5 33v91q-83 -11 -115 -34t-32 -53q0 -25 16.5 -37t44.5 -12zM216 -14q-39 0 -70.5 13.5t-53.5 37t-33.5 55t-11.5 67.5q0 45 18 80t56.5 60.5t98.5 42.5t143 26q-3 35 -22.5 54t-63.5 19q-34 0 -70 -13t-79 -37l-62 117q57 34 117.5 54.5
+t127.5 20.5q111 0 170.5 -63t59.5 -197v-323h-145l-13 57h-4q-35 -32 -75 -51.5t-88 -19.5z"  horiz-adv-x="606"   />
+
+    
+    <glyph glyph-name="cid74" unicode="&#x69;" d="M161 648q-45 0 -73.5 25.5t-28.5 65.5q0 41 28.5 66.5t73.5 25.5t73 -25.5t28 -66.5q0 -40 -28 -65.5t-73 -25.5zM72 569h177v-569h-177v569z"  horiz-adv-x="321"   />
+
+    
+    <glyph glyph-name="cid76" unicode="&#x6b;" d="M72 799h173v-446h4l173 216h193l-201 -235l215 -334h-193l-123 216l-68 -77v-139h-173v799z"  horiz-adv-x="634"   />
+
+    
+    <glyph glyph-name="cid83" unicode="&#x72;" d="M72 569h145l12 -99h4q32 57 75.5 85t86.5 28q26 0 41.5 -3.5t27.5 -8.5l-30 -153q-15 4 -29 6.5t-33 2.5q-32 0 -66 -22.5t-57 -79.5v-325h-177v569z"  horiz-adv-x="464"   />
+
+    
+
+  </font>
+</defs></svg>
