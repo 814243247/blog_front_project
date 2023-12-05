@@ -2,7 +2,7 @@
   <div>
     <el-upload
             class="upload-demo"
-            drag action="http://localhost:8080/upload"
+            drag action="http://www.suenaga.top:8080/upload"
             :on-success="handleSuccess"
             multiple>
       <i class="el-icon-upload"></i>

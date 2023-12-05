@@ -22,7 +22,7 @@
                 <el-upload
                         class="avatar-uploader"
                         ref="upload"
-                        action="http://localhost:8080/upload"
+                        action="http://www.suenaga.top:8080/upload"
                         :limit="1"
                         :show-file-list="false"
                         :on-remove="handleRemove"

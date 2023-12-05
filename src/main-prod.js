@@ -29,11 +29,11 @@ Vue.prototype.$jsonp = VueJsonp
 
 
 const blog = axios.create({ // 博客后台api地址
-  baseURL: 'http://localhost:8080'
+  baseURL: 'http://www.suenaga.top:8080'
 })
 
 const picture = axios.create({ // 图片服务器api地址
-  baseURL: 'http://localhost:8080'
+  baseURL: 'http://www.suenaga.top:8080'
 })
 
 blog.interceptors.request.use(config => {
