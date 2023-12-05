@@ -125,8 +125,8 @@ export default {
       },
       rpActiveId: -1,
       blogId: 0,
-      wechart: 'http://localhost/image/weixin.png',
-      alipay: 'http://localhost/image/zhifu.jpg',
+      wechart: 'https://myblog-zhou.oss-cn-beijing.aliyuncs.com/mm_facetoface_collect_qrcode_1701531271755.png',
+      alipay: 'https://myblog-zhou.oss-cn-beijing.aliyuncs.com/1701760460582.jpg',
       commentForm: {
         content: ''
       },

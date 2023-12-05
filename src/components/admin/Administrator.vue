@@ -39,7 +39,7 @@
       <el-upload
               v-if="uploading"
               class="avatar-uploader"
-              action="http://localhost:8080/upload"
+              action="http://www.suenaga.top:8080/upload"
               :show-file-list="false"
               :on-success="handleAvatarSuccess">
         <img v-if="imageUrl" :src="imageUrl" class="new-avatar">

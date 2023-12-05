@@ -27,14 +27,14 @@
                                @change="setBlogType">
                         <el-option v-for="type in typeList" :label="type.name" :value="type.id" :key="type.id"></el-option>
                     </el-select>
-                    <el-button size="small">+ 新建分类</el-button>
+<!--                    <el-button size="small">+ 新建分类</el-button>-->
                 </el-form-item>
                 <el-form-item label="文章标签" prop="tags">
                     <el-card shadow="never" style="height: 120px; overflow: auto">
                         <el-checkbox-group v-model="publishForm.tags">
                             <el-checkbox v-for="tag in tagList" :label="tag.id" :key="tag.id">{{tag.name}}</el-checkbox>
                         </el-checkbox-group>
-                        <el-button size="mini">+ 新建标签</el-button>
+<!--                        <el-button size="mini">+ 新建标签</el-button>-->
                     </el-card>
                 </el-form-item>
                 <el-form-item label="文章类型" prop="flag">
@@ -50,7 +50,7 @@
                 <el-form-item label="文章首图">
                     <el-upload
                             ref="upload"
-                            action="http://localhost:8080/upload"
+                            action="http://www.suenaga.top:8080/upload"
                             list-type="picture-card"
                             :limit="1"
                             :on-preview="handlePictureCardPreview"
@@ -158,8 +158,8 @@ export default {
         async handleSuccess(res) {
             this.dialogImageUrl = res.data.dialogImageUrl
         },
-        publishBlog() {
-            this.$refs.publishFormRef.validate( async valid => {
+         async publishBlog() {
+            await this.$refs.publishFormRef.validate(async valid => {
                 if (!valid) return
                 this.blog.firstPicture = this.dialogImageUrl
                 this.blog.tagIds = this.publishForm.tags.toString().replace(/\[|]/g, '');

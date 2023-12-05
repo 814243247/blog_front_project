@@ -126,7 +126,7 @@
                     <el-form-item style="text-align: center">
                         <el-upload
                                 ref="upload"
-                                action="http://localhost:8080/upload"
+                                action="http://www.suenaga.top:8080/upload"
                                 list-type="picture-card"
                                 :limit="1"
                                 :on-preview="handlePictureCardPreview"

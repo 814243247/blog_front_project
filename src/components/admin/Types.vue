@@ -70,6 +70,8 @@
 </template>
 
 <script>
+import async from "async";
+
 export default {
     data() {
         return {
@@ -94,6 +96,7 @@ export default {
         }
     },
     created() {
+
         this.getFullTypeList();
     },
     methods: {
@@ -115,8 +118,8 @@ export default {
             this.selectedCard = id
             // console.log(this.selectedCard)
         },
-        createType() {
-            this.$refs.createTypeFormRef.validate(async valid => {
+        async createType() {
+            await this.$refs.createTypeFormRef.validate(async valid => {
                 if (!valid) return
                 this.type.name = this.createTypeForm.name
                 this.type.pic_url = this.dialogImageUrl
@@ -149,7 +152,7 @@ export default {
         handleRemove() {
             this.dialogImageUrl = ''
         },
-        handlePictureCardPreview(file) {
+        async handlePictureCardPreview(file) {
             this.dialogImageUrl = file.url;
             this.dialogVisible = true;
         },
@@ -164,7 +167,7 @@ export default {
             this.createTypeForm.name = ''
             this.$refs.createTypeFormRef.resetFields()
         },
-        editBlogDialog(row) {
+        async editBlogDialog(row) {
             this.type = row
             // console.log(this.type)
             if (row.pic_url!=''){
