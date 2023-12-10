@@ -16,7 +16,7 @@
       </el-col>
     </el-row>
     <el-container id="index" class="animate__animated animate__fadeInUp">
-      <el-row :gutter="12" style="width: 200%; height: 1000px;">
+      <el-row :gutter="12" style="width: 100%; height: 1000px;">
         <el-col :xs="24" :sm="17">
           <el-card style="background-color: rgba(255,255,255,0.9)" class="left-item">
             <div slot="header" class="total">
@@ -79,8 +79,8 @@
                   :key="type.id"
                   @click="selectType(type.id)"
                   :class="type.id === typeId? 'activeType':''">
-                <div style="display: flex;align-items: center">
-                  <el-image lazy :src="type.pic_url"
+                <div style="display: flex;align-items: center" @click="getTypeList">
+                  <el-image :src="type.pic_url"
                             style="width: 28px;height: 28px; border-radius: 50%; margin-right: 10px"></el-image>
                   {{type.name}}
                 </div>
@@ -176,6 +176,8 @@ export default {
   },
   created() {
     window.addEventListener('resize', this.screenAdapter)
+      this.getBlogList()
+      this.getTypeList()
   },
   mounted() {
     this.getTypeList()
@@ -220,8 +222,9 @@ export default {
     async getRecommendList() {
       const {data: res} = await this.$blog.get('/getRecommendBlogList')
       // console.log(res)
+
       this.recommendList = res.data
-      this.total = res.total
+      this.total = res.data.length
     },
     // 获取博客类型列表
     async getTypeList() {
@@ -278,11 +281,11 @@ export default {
       this.selected = true
     },
     // 更新博客列表
-    updateBlogList() {
+    async updateBlogList() {
       this.selected = false
       this.typeId = -1
       this.tagId = -1
-      this.getBlogList()
+      await this.getBlogList()
     },
     // 得到所有的分类
     async getFullTypeList() {

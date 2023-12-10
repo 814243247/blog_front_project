@@ -4,11 +4,12 @@
     <div class="animate__animated animate__fadeIn title" :key="key" :style="{'background-image': bgUrl}"></div>
     <el-header :style="'margin-bottom:'+ headerBottom +'px'" class="animate__animated animate__fadeIn">
 <!--      <h2 class="animate__animated animate__swing logo" :key="shade" @click="shade++">長安</h2>-->
-      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="rgba(0,0,0,0)"
+      <el-menu  :default-active="activeIndex" class="el-menu-demo" mode="horizontal" background-color="rgba(0,0,0,0)"
                style="border: none;"
                router text-color="#fff" active-text-color="#ffd04b">
         <el-menu-item :index="'/'+item.path" v-for="item in menulist" background-color="rgba(0,0,0,0)" :key="item.id" @click="changePage(item.path)">
-          <template slot="title">
+
+            <template slot="title">
             <!--                图标-->
             <i :class="iconsObj[item.id]"></i>
             <!--                文本-->
@@ -33,7 +34,7 @@
         </el-menu>
       </div>
 
-      <div class="search_input"style="margin-right: 150px">
+      <div class="search_input" style="margin-right: 100px">
         <el-input
                 @focus="checkInput"
                 @blur="notSearching()"
@@ -51,11 +52,14 @@
         </ul>
       </div>
 
-        <div class="menu-expend" style="margin-left: 80px" @click="menuExpend">
-            <i class="el-icon-menu"></i>
-        </div>
-      <div v-if="logined" style="margin-right: 30px">
-        <el-button size="mini" effect="light" type="primary" @click="showLFV">登录</el-button>
+      <div v-if="logined">
+          <div class="menu-expend" style="margin-left: 100px" @click="menuExpend">
+              <i class="el-icon-menu"></i>
+
+          </div>
+        <el-button size="mini" effect="light" type="primary" @click="showLFV">
+
+            登录</el-button>
         <el-button size="mini" effect="light" type="warning" @click="showRFV">注册</el-button>
       </div>
       <div v-else class="loginInfo">
@@ -80,6 +84,7 @@ import Login from "../login/Login";
 import Register from "../login/Register";
 import {mapState} from "vuex";
 import administrator from "@/components/admin/Administrator.vue";
+import {userInfo} from "os";
 
 export default {
   components: {
@@ -168,13 +173,14 @@ export default {
     const idx = Math.floor(Math.random()*3+1);
     this.bgUrl = `url("https://myblog-zhou.oss-cn-beijing.aliyuncs.com/bg_${idx}.jpg")`
     console.log(this.bgUrl)
+
+
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
 
   methods: {
-
     notSearching(){
       setTimeout( () => {
         this.searching = false
@@ -219,7 +225,6 @@ export default {
 
 // 跳转到博客详情页
     getBlogInfo(blogId) {
-      this.$store.commit('changeBlogKey')
       this.$router.push({path: '/blogInfo', query: {id: blogId}});
     }
     ,
@@ -254,7 +259,12 @@ export default {
       } else {
         this.headerBottom = 0
       }
-    }
+    },
+      onBlur() {
+          this.menuHiddenVisiable = false
+          this.headerBottom = 0
+          // 失去焦点后的操作
+      }
   }
 }
 </script>
@@ -311,7 +321,6 @@ export default {
 
   .search_input {
     position: relative;
-    box-sizing: border-box;
   }
 
 

@@ -14,7 +14,9 @@
             </el-col>
         </el-row>
         <el-row>
-            <mavon-editor v-model="blog.content" style="margin: 10px auto;min-height: 70vh"/>
+            <mavon-editor v-model="blog.content" style="margin: 10px auto;min-height: 70vh"
+            ref="md" @imgAdd="imgAdd" @imgDel="imgDel"
+            />
         </el-row>
         <el-row align="right" type="flex" justify="end">
 
@@ -123,6 +125,22 @@ export default {
       }
     },
     methods: {
+        async imgAdd(pos, $file) {
+            // console.log($file)
+            let formdata = new FormData();
+            formdata.append('file', $file);
+            const {data: res} = await this.$blog.post('/upload', formdata)
+            if (res.code === 200) {
+                this.$refs.md.$img2Url(pos, res.data.dialogImageUrl)
+            }
+        },
+        async imgDel(pos) {
+            // console.log(pos[0])
+            let len = pos[0].split('/').length
+            let filename = pos[0].split('/')[len - 1]
+            // console.log(filename)
+            const {data: res} = await this.$picture.get(`/delete/${filename}`)
+        },
         // 获取博客类型列表
         async getTypeList() {
             const {data: res} = await this.$blog.get('/admin/getFullTypeList')

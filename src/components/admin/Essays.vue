@@ -104,7 +104,7 @@ export default {
       formdata.append('file', $file);
       const {data: res} = await this.$blog.post('/upload', formdata)
       if (res.code === 200) {
-        this.$refs.md.$img2Url(pos, res.data)
+        this.$refs.md.$img2Url(pos, res.data.dialogImageUrl)
       }
     },
     // 删除不需要的图片
