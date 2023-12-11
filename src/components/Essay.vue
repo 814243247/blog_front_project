@@ -4,8 +4,9 @@
             <el-timeline-item :color="essay.borderColor" v-for="essay in essayList" :key="essay.id" :timestamp="essay.createTime| dataFormat" placement="top">
                 <el-card style="letter-spacing: 1px;" :style="calcuteStyle(essay)">
                     <h2 v-if="essay.title">{{essay.title}}</h2>
-                    <div class="typo" v-html="essay.content"></div>
-                    <el-image v-if="essay.image" :src="essay.image"></el-image>
+                    <div style="width: 100%; height: 500px; overflow: auto" v-highlight v-html="essay.content"></div>
+
+                <el-image v-if="essay.image" :src="essay.image"></el-image>
                 </el-card>
             </el-timeline-item>
         </el-timeline>
@@ -58,8 +59,15 @@ export default {
         .el-card{
             border-radius: 20px;
             box-shadow: 0 0 15px 5px white;
+            margin:0 auto
+        }
+        div[style="width: 100%; height: 500px; overflow: auto"] {
+            width: 100%; /* 设置宽度为100% */
+            height: auto; /* 设置高度为自适应高度 */
+            max-height: 500px; /* 设置最大高度，超出部分可滚动显示 */
         }
     }
+
 
     @media screen and (max-width: 768px){
         .el-timeline{

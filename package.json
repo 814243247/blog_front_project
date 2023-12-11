@@ -40,7 +40,9 @@
     "less": "^4.1.1",
     "less-loader": "^7.3.0",
     "vue-cli-plugin-element": "^1.0.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.46.0"
+
   },
   "browserslist": [
     "> 1%",
