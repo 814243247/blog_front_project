@@ -34,29 +34,29 @@
         </el-menu>
       </div>
 
-      <div class="search_input" style="margin-right: 100px">
-        <el-input
-                @focus="checkInput"
-                @blur="notSearching()"
-                class="search"
-                placeholder="请输入内容"
-                prefix-icon="el-icon-search"
-                v-model="queryInfo.query"
-                size="mini">
-        </el-input>
-        <ul v-if="searching">
-          <li class="animate__animated animate__fadeInDown search-blog" v-for="blog in searchList" :key="blog.id"
-              @click="getBlogInfo(blog.id)">
-            <a>{{blog.title}}</a>
-          </li>
-        </ul>
-      </div>
+<!--      <div class="search_input" style="margin-right: 100px">-->
+<!--        <el-input-->
+<!--                @focus="checkInput"-->
+<!--                @blur="notSearching()"-->
+<!--                class="search"-->
+<!--                placeholder="请输入内容"-->
+<!--                prefix-icon="el-icon-search"-->
+<!--                v-model="queryInfo.query"-->
+<!--                size="mini">-->
+<!--        </el-input>-->
+<!--        <ul v-if="searching">-->
+<!--          <li class="animate__animated animate__fadeInDown search-blog" v-for="blog in searchList" :key="blog.id"-->
+<!--              @click="getBlogInfo(blog.id)">-->
+<!--            <a>{{blog.title}}</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+        <div class="menu-expend"  style="margin-left: 50px" @click="menuExpend">
+            <i class="el-icon-menu"></i>
 
+        </div>
       <div v-if="logined">
-          <div class="menu-expend" style="margin-left: 100px" @click="menuExpend">
-              <i class="el-icon-menu"></i>
 
-          </div>
         <el-button size="mini" effect="light" type="primary" @click="showLFV">
 
             登录</el-button>
@@ -70,6 +70,7 @@
           <p class="logout" @click="logout">退出登录</p>
         </div>
       </div>
+
       <login></login>
       <register></register>
 
@@ -122,11 +123,11 @@ export default {
         //   authName: '搜索',
         //   path: 'search'
         // },
-        {
-          id: 3,
-          authName: '留言',
-          path: 'message'
-        },
+        // {
+        //   id: 3,
+        //   authName: '留言',
+        //   path: 'message'
+        // },
         {
           id: 4,
           authName: '关于我',

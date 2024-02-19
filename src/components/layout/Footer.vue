@@ -1,5 +1,5 @@
 <template>
-    <div class="animate__animated animate__fadeInUp footer-wrap">
+    <div class="animate__animated animate__fadeInUp footer-wrap" style="background-color: rgba(255, 255, 255, 0%)">
         <!--    center aligned居中-->
 
         <el-row :gutter="20" class=" footer-info">
@@ -7,14 +7,14 @@
                 <el-image src="https://myblog-zhou.oss-cn-beijing.aliyuncs.com/20161104103323_kPhCm.gif" alt="图片加载失败"
                           class="ui rounded image" style="width: 110px"/>
             </el-col>
-            <el-col class="new-blog" :xs="24" :sm="7">
-                <h4 class="ui inverted header m-text-spaced ">最新博客</h4>
-                <div id="newblog-container">
-                    <div class="recommend-blog l-text list" v-for="blog in footerList" :key="blog.id">
-                        <a class="item" href="#" target="_blank">{{blog.title}}</a>
-                    </div>
-                </div>
-            </el-col>
+<!--            <el-col class="new-blog" :xs="24" :sm="7">-->
+<!--                <h4 class="ui inverted header m-text-spaced ">最新博客</h4>-->
+<!--                <div id="newblog-container">-->
+<!--                    <div class="recommend-blog l-text list" v-for="blog in footerList" :key="blog.id">-->
+<!--                        <a class="item" href="#" target="_blank">{{blog.title}}</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </el-col>-->
             <el-col class="connect" :xs="24" :sm="5">
                 <h4 class="ui inverted header m-text-spaced ">联系我</h4>
                 <div class="ui inverted link list">
@@ -26,8 +26,11 @@
                 <div class="seven wide column">
                     <h4 class="ui inverted header m-text-spaced">博客简介</h4>
                     <p class="m-text-thin m-text-spaced m-opacity-mini" >
-                        累死啦</p>
+                        保持热爱</p>
                 </div>
+            </el-col>
+            <el-col class="connect" :xs="24" :sm="5">
+                <h4 class="ui inverted header m-text-spaced ">桂ICP备2024017545号</h4>
             </el-col>
         </el-row>
 <!--        <el-row>-->

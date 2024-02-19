@@ -4,7 +4,7 @@
             <el-timeline-item :color="essay.borderColor" v-for="essay in essayList" :key="essay.id" :timestamp="essay.createTime| dataFormat" placement="top">
                 <el-card style="letter-spacing: 1px;" :style="calcuteStyle(essay)">
                     <h2 v-if="essay.title">{{essay.title}}</h2>
-                    <div style="width: 100%; height: 500px; overflow: auto" v-highlight v-html="essay.content"></div>
+                    <div style="width: 100%; height: 500px; overflow: auto" v-html="essay.content"></div>
 
                 <el-image v-if="essay.image" :src="essay.image"></el-image>
                 </el-card>

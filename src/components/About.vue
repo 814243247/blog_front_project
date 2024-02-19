@@ -1,30 +1,37 @@
 <template>
-  <div class="box">
-    <aside class="animate__animated sidebar">
-      <div class="avatar">
-        <img src="https://myblog-zhou.oss-cn-beijing.aliyuncs.com/OIP%20%282%29%281%29.jpeg" title="Suenaga">
-      </div>
-      <nav class="nav">
-        <a v-for="intro in introduceList" @click="showSection(intro.name)" :key="intro.id"><i :class="intro.icon" style="margin-right: 10px"></i> {{intro.title}}</a>
-      </nav>
-    </aside>
+<!--    <aside class="animate__animated sidebar">-->
+<!--      <div class="avatar">-->
+<!--        <img src="https://myblog-zhou.oss-cn-beijing.aliyuncs.com/OIP%20%282%29%281%29.jpeg" title="Suenaga">-->
+<!--      </div>-->
+<!--      <nav class="nav">-->
+<!--        <a v-for="intro in introduceList" @click="showSection(intro.name)" :key="intro.id"><i :class="intro.icon" style="margin-right: 10px"></i> {{intro.title}}</a>-->
+<!--      </nav>-->
+<!--    </aside>-->
     <main>
-      <section class="animate__animated animate__fadeInRight" v-if="showSectionId == '#info'" id="info" :style="{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }">
-
+      <section class="animate__animated animate__fadeInRight center-section" v-if="showSectionId == '#info'" id="info" :style="{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }">
+          <div class="avatar-container">
+              <img src="https://myblog-zhou.oss-cn-beijing.aliyuncs.com/img.ico
+" class="avatar-img">
+          </div>
           <div class="wrap">
           <el-row :gutter="20" class="reset-size1">
             <el-col :sm="8" :xs="24" class="col-align-c">
-              <p :style="fontStyle"><i style="margin-right: 5px"></i>ID：Suenaga</p>
+              <p :style="fontStyle">ID：Suenaga</p>
                 <h3 v-html="intro" :style="fontStyle" ></h3>
             </el-col>
-            <el-col :sm="16" :xs="24" class="col-l-4">
 
-            </el-col>
+          </el-row>
+              <p :style="fontStyle">技术栈</p>
+              <el-row>
+              <el-col :sm="8" :xs="24" class="col-align-c">
+                  <a href="https://skillicons.dev">
+                      <img src="https://skillicons.dev/icons?i=git,css,docker,py,java,spring,js,linux,mysql,maven,nginx,rabbitmq,redis,git,github,cs,idea,figma&theme=dark" class="skill"/>
+                  </a>
+              </el-col>
           </el-row>
         </div>
       </section>
     </main>
-  </div>
 </template>
 
 <script>
@@ -83,7 +90,37 @@ export default {
 </script>
 
 <style scoped lang="less">
-  body {
+
+  avatar-container {
+    width: 50px; /* 设置头像框的宽度 */
+    height: 50px; /* 设置头像框的高度 */
+    overflow: hidden; /* 隐藏溢出的部分 */
+    border-radius: 50%; /* 圆形边框 */
+    margin: 0 auto; /* 居中 */
+  }
+  .center-section {
+    width: 50%;
+    margin: 0 auto;
+    right: 150px;
+    @media (max-width: 768px) {
+      width: 100%; /* 或者设置其他样式 */
+      right: 0; /* 或者设置其他样式 */
+    }
+  }
+  .skill {
+    max-width: 200%;
+    @media (max-width: 768px) {
+      max-width: 100%; /* 或者设置其他样式 */
+    }
+  }
+  .avatar-img {
+    width: 10%; /* 图片宽度100%填充头像框 */
+    height: auto; /* 高度自适应 */
+    border-radius: 50%; /* 圆形边框，确保图片也是圆形的 */
+    display: block; /* 让图片在父容器中居中 */
+    margin: 0 auto; /* 水平居中 */
+  }
+  .body {
     height: 100vh;
     overflow: hidden;
   }

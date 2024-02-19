@@ -4,7 +4,7 @@
       <el-col :span="24" style="height: 100%">
         <el-card shadow="none" class="welcome">
           <h1 class="tit">
-              Time flies
+              SUENAGA
             <div class="border"></div>
           </h1>
 
@@ -30,7 +30,7 @@
                     :key="blog.id"
                     shadow="never" class="animate__animated animate__fadeInUp blog-content">
               <el-col class="img" :xs="24" :sm="8">
-                <el-image lazy :src="blog.firstPicture"></el-image>
+                <el-image :src="blog.firstPicture"></el-image>
               </el-col>
               <el-col :xs="24" :sm="16">
                 <div @click="getBlogInfo(blog.id)">
